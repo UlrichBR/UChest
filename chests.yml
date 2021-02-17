@@ -1,0 +1,119 @@
+Chests:
+  infinity:
+    material: 'ENDER_CHEST'
+    data: 0
+    texture: '' # USE BASE64 TEXTURES
+    name: '&6&lInfinity'
+    lore:
+    - ''
+    - ' &ePlace this item on your land to start.'
+    flags:
+    - HIDE_ENCHANTS
+    enchants:
+    - 'PROTECTION_ENVIRONMENTAL;1'
+    accepted_worlds:
+    - 'world'
+    distance_another: 16 # MINIMUM DISTANCE FROM OTHER CHEST, MINIMUM 1
+    fuel_consume: 0
+    fuel_limit: 0
+    wave_time: 15
+    sellshop: 'infinity'
+    nearby:
+      nearby_radius: '5x5x5' # formula = (radius * level) * multiplier << nearby_limit
+      nearby_level_multiplier: 1 
+      nearby_limit: 16
+    accepted_fuel: {} # EMPTY TO INFINITE FUEL
+    upgrade:
+      enabled: true
+      multiplier: 0.5
+      price: 1000.0 #NEED VALT, formula = (price * level) * multiplier << max_level
+      max_level: 10
+      downgrade_price: 500.0 #NEED VALT, formula = (downgrade_price * level) * multiplier >> 1
+      shop_price_multiplier: 0.05 # formula = (level * shop_price_multiplier) * shop price >> 1.0
+    money_fuel: #FUNCTION DISABLED
+      accept: true
+      price: 10.0
+      recharge_time: 10
+    block_fuel: #FUNCTION DISABLED
+      accept: true
+      list: # MATERIAL : DATA ; AMOUNT ; RECHARGE TIME
+      - 'DIAMOND_BLOCK:0;1;10' #EXAMPLE
+    ignore_items:
+    - MOB_SPAWNER
+    - CHEST
+    - ENDER_CHEST
+    ignore_nbt:
+    - 'UCHEST'
+    - 'UFUEL'
+    hologram:
+      refresh: 1 # IN SECONDS
+      ajust-x: 0.5
+      ajust-y: 2.3
+      ajust-z: 0.5
+      format:
+      - '%chest_c_name%'
+      - '%chest_work_enabled_formated%'
+      - '&7Bank: %chest_bank_hook_disabled_hooked%&7/&5%chest_bank_exp%'
+      - '&7Last Sold: &a$%chest_info_lastsold%'
+      - '&7Last Caught: &7%chest_info_lastcaught%'
+      - '&6Click do open.'
+  collector:
+    material: 'CHEST'
+    data: 0
+    texture: '' # USE BASE64 TEXTURES
+    name: '&5&lCollector'
+    lore:
+    - ''
+    - ' &ePlace this item on your land to start.'
+    flags:
+    - HIDE_ENCHANTS
+    enchants:
+    - 'PROTECTION_ENVIRONMENTAL;1'
+    accepted_worlds:
+    - 'world'
+    distance_another: 16 # MINIMUM DISTANCE FROM OTHER CHEST, MINIMUM 1
+    fuel_consume: 3
+    fuel_limit: 1000
+    wave_time: 5
+    sellshop: 'comum'
+    nearby:
+      nearby_radius: '5x5x5'
+      nearby_level_multiplier: 1
+      nearby_limit: 16
+    accepted_fuel: #PRE CREATED FUEL IN fuels.yml
+    - 'coal'
+    - 'superfuel'
+    upgrade:
+      enabled: true
+      multiplier: 0.5
+      price: 1000.0 #NEED VALT, formula = (price * level) * multiplier
+      max_level: 5
+      downgrade_price: 5.0 #NEED VALT, formula = (downgrade_price * level) * multiplier
+    money_fuel: #FUNCTION DISABLED
+      accept: true
+      price: 10.0
+      recharge_time: 10
+    block_fuel: #FUNCTION DISABLED
+      accept: true
+      list: # MATERIAL : DATA ; AMOUNT ; RECHARGE TIME
+      - 'DIAMOND_BLOCK:0;1;10' #EXAMPLE
+    ignore_items:
+    - MOB_SPAWNER
+    - CHEST
+    - ENDER_CHEST
+    ignore_nbt:
+    - 'UCHEST'
+    - 'UFUEL'
+    hologram:
+      refresh: 1 # IN SECONDS
+      ajust-x: 0.5
+      ajust-y: 2.5
+      ajust-z: 0.5
+      format:
+      - '%chest_c_name%'
+      - '&bFuel: &7%chest_work_fuelleft% points.'
+      - '%chest_work_enabled_formated%'
+      - '&7Bank: %chest_bank_hook_disabled_hooked%&7/&5%chest_bank_exp%'
+      - '&7Last Sold: &a$%chest_info_lastsold%'
+      - '&7Last Caught: &7%chest_info_lastcaught%'
+      - '&6Click do open.'

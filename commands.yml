@@ -1,0 +1,373 @@
+Commands:
+  list:
+    chest:
+      separer1:
+        permission: ''
+        no_permission_message: ''
+        alias: ''
+        center: false
+        show:
+          on_help: ' &8Chest: &6[?]'
+          on_help_json:
+            hover_text: '&aChest commands.'
+            click_type: ''
+            click_action: ''
+      help:
+        permission: uchest.player.help
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: ajuda
+        center: false
+        show:
+          on_help: ' &d/chest help &7-&e Show help menu.'
+          on_help_json:
+            hover_text: '&aClick to view help of Clans.'
+            click_type: RUN_COMMAND
+            click_action: /chest help
+          on_success: '%tag% &aYou are seeing the help!'
+          on_error: '%tag% &cError to show text.'
+          on_usage: '%tag% &cError, use &d/chest help'
+          raw_base_color: DARK_RED
+        sound: # This variable can be added to all commands
+          on_help: ''
+          on_success: ''
+          on_error: ''
+          on_usage: ''
+          extra:
+            volume: 10
+            pitch: 1
+        title: # This variable can be added to all commands
+          on_help: ''
+          on_success: ''
+          on_error: ''
+          on_usage: ''
+        actionbar: # This variable can be added to all commands
+          on_help: ''
+          on_success: ''
+          on_error: ''
+          on_usage: ''
+      shop:
+        permission: uchest.player.shop
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: shop
+        center: false
+        show:
+          on_help: ' &d/chest shop &7-&e Open Chest Shop.'
+          on_help_json:
+            hover_text: '&aClick to open Chest Shop'
+            click_type: RUN_COMMAND
+            click_action: /chest shop
+          on_success: '%tag% &aSuccess.'
+          on_error: '%tag% &cError.'
+          on_usage: '%tag% &cError, use &d/chest shop'
+          raw_base_color: DARK_RED
+      list:
+        permission: uchest.player.list
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: list
+        center: false
+        show:
+          on_help: ' &d/chest list &7-&e List your Chests.'
+          on_help_json:
+            hover_text: '&aClick to List your Chests'
+            click_type: RUN_COMMAND
+            click_action: /chest list
+          on_success: '%tag% &aYou have been successfully teleported to the chest!'
+          on_error: '%tag% &cAn error occurred while teleporting.'
+          on_usage: '%tag% &cError, use &d/chest list'
+          raw_base_color: DARK_RED
+      tp:
+        permission: uchest.player.tp
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: ajuda
+        center: false
+        show:
+          on_help: ' &d/chest tp <id> &7-&e Teleport to chest.'
+          on_help_json:
+            hover_text: '&aClick to teleport'
+            click_type: SUGGEST_COMMAND
+            click_action: /chest tp <id>
+          on_success: '%tag% &aYou have been successfully teleported to the chest!'
+          on_error: '%tag% &cAn error occurred while teleporting.'
+          on_usage: '%tag% &cError, use &d/chest tp <id>'
+          raw_base_color: DARK_RED
+      collect:
+        permission: uchest.player.collect
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: collect
+        center: false
+        show:
+          on_help: ' &d/chest collect <id> <MONEY|EXP> &7-&e Collect bank.'
+          on_help_json:
+            hover_text: '&aClick to collect'
+            click_type: SUGGEST_COMMAND
+            click_action: /chest collect <id> <MONEY|EXP>
+          on_success: '%tag% &aYou have collected &a%amount% &aof &b%type%'
+          on_error: '%tag% &cAn error occurred while collecting &b%type%'
+          on_usage: '%tag% &cError, use &d/chest collect <id> <MONEY|EXP>'
+          raw_base_color: DARK_RED
+      flag:
+        permission: uchest.player.flag
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: flag
+        center: false
+        show:
+          on_help: ' &d/chest flag <id> <FLAG:VALUE> &7-&e Change a flag.'
+          on_help_json:
+            hover_text: '&aClick to Change a flag'
+            click_type: SUGGEST_COMMAND
+            click_action: /chest flag <id> <FLAG:VALUE>
+          on_success: '%tag% &aFlag successfully changed to &b%flag%'
+          on_error: '%tag% &cError...'
+          on_usage: '%tag% &cError, use &d/chest flag <id> <FLAG:VALUE>'
+          raw_base_color: DARK_RED
+      level:
+        permission: uchest.player.level
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: level
+        center: false
+        show:
+          on_help: ' &d/chest level <id> <UP|DOWN> &7-&e Change a flag.'
+          on_help_json:
+            hover_text: '&aClick to Change a flag'
+            click_type: SUGGEST_COMMAND
+            click_action: /chest level <id> <UP|DOWN>
+          on_success: '%tag% &aYou &b%action% &ayour chest at &6%level% &alevel and paid &a$%price% &afor it.'
+          on_error: '%tag% &cError...'
+          on_usage: '%tag% &cError, use &d/chest level <id> <UP|DOWN>'
+          raw_base_color: DARK_RED
+      hook:
+        permission: uchest.player.hook
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: hook
+        center: false
+        show:
+          on_help: ' &d/chest hook <id> &7-&e Hook to a chest.'
+          on_help_json:
+            hover_text: '&aClick to hook to a chest'
+            click_type: SUGGEST_COMMAND
+            click_action: /chest hook <id>
+          on_success: '%tag% &aSuccess.'
+          on_error: '%tag% &cThere was an error starting the hook action.'
+          on_usage: '%tag% &cError, use &d/chest hook <id>'
+          raw_base_color: DARK_RED
+      cancelactions:
+        permission: uchest.player.cancelactions
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: cancelactions
+        center: false
+        show:
+          on_help: ' &d/chest cancelactions &7-&e Cancel chat actions.'
+          on_help_json:
+            hover_text: '&aClick to cancel actions'
+            click_type: SUGGEST_COMMAND
+            click_action: /chest cancelactions
+          on_success: '%tag% &aThe pending actions have been canceled.'
+          on_error: '%tag% &cAn error occurred while canceling pending actions.'
+          on_usage: '%tag% &cError, use &d/chest cancelactions'
+          raw_base_color: DARK_RED
+    uchest:
+      separer1:
+        permission: ''
+        no_permission_message: ''
+        alias: ''
+        center: false
+        show:
+          on_help: ' &8Admin Chest: &6[?]'
+          on_help_json:
+            hover_text: '&aAdmin Chest commands.'
+            click_type: ''
+            click_action: ''
+      help:
+        permission: uchest.admin.help
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: ajuda
+        center: false
+        show:
+          on_help: ' &d/uchest help &7-&e Show help menu.'
+          on_help_json:
+            hover_text: '&aClick to view help of Clans.'
+            click_type: RUN_COMMAND
+            click_action: /uchest help
+          on_success: '%tag% &aYou are seeing the help!'
+          on_error: '%tag% &cError to show text.'
+          on_usage: '%tag% &cError, use &d/uchest help'
+          raw_base_color: DARK_RED
+        sound: # This variable can be added to all commands
+          on_help: ''
+          on_success: ''
+          on_error: ''
+          on_usage: ''
+          extra:
+            volume: 10
+            pitch: 1
+        title: # This variable can be added to all commands
+          on_help: ''
+          on_success: ''
+          on_error: ''
+          on_usage: ''
+        actionbar: # This variable can be added to all commands
+          on_help: ''
+          on_success: ''
+          on_error: ''
+          on_usage: ''
+      reload:
+        permission: uchest.admin.reload
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: reload
+        center: false
+        show:
+          on_help: ' &d/uchest reload &7-&e Reload the plugin.'
+          on_help_json:
+            hover_text: '&aClick to reload plugin configurations.'
+            click_type: SUGGEST_COMMAND
+            click_action: /uchest reload
+          on_success: '%tag% &ePlugin reloaded. &8(%timeleft%)'
+          on_error: '%tag% &cError loading settings.'
+          on_usage: '%tag% &cErro, Use &d/uchest reload'
+          raw_base_color: DARK_RED
+      listchests:
+        permission: uchest.admin.listchests
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: listchests
+        center: false
+        show:
+          on_help: ' &d/uchest listchests &7-&e List all chests.'
+          on_help_json:
+            hover_text: '&aClick to list all chests.'
+            click_type: SUGGEST_COMMAND
+            click_action: /uchest listchests
+          on_success: '%tag% &eSuccess show.'
+          on_error: '%tag% &cError to show.'
+          on_usage: '%tag% &cErro, Use &d/uchest listchests'
+          raw_base_color: DARK_RED
+      give:
+        permission: uchest.admin.give
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: give
+        center: false
+        show:
+          on_help: ' &d/uchest give &7-&e Adds a chest to the player.'
+          on_help_json:
+            hover_text: '&aClick to adds a chest to the player.'
+            click_type: SUGGEST_COMMAND
+            click_action: '/uchest give <player> <chest> <amount> <level>'
+          on_success: '%tag% &eYou have sent to &a%receiver% &e%amount% &eof %chest_name%'
+          on_error: '%tag% &cThere was an error sending'
+          on_usage: '%tag% &cErro, Use &d/uchest give <player> <chest> <amount> <level>'
+          raw_base_color: DARK_RED
+      listfuels:
+        permission: uchest.admin.listfuels
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: listfuels
+        center: false
+        show:
+          on_help: ' &d/uchest listfuels &7-&e List all fuels.'
+          on_help_json:
+            hover_text: '&aClick to list all fuels.'
+            click_type: SUGGEST_COMMAND
+            click_action: /uchest listfuels
+          on_success: '%tag% &eSuccess show.'
+          on_error: '%tag% &cError to show.'
+          on_usage: '%tag% &cErro, Use &d/uchest listfuels'
+          raw_base_color: DARK_RED
+      givefuel:
+        permission: uchest.admin.givefuel
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: givefuel
+        center: false
+        show:
+          on_help: ' &d/uchest givefuel &7-&e Adds a fuel to the player.'
+          on_help_json:
+            hover_text: '&aClick to adds a fuel to the player.'
+            click_type: SUGGEST_COMMAND
+            click_action: '/uchest givefuel <player> <fuel> <amount>'
+          on_success: '%tag% &eYou have sent to &a%receiver% &e%amount% &eof %fuel_name%'
+          on_error: '%tag% &cThere was an error sending'
+          on_usage: '%tag% &cErro, Use &d/uchest givefuel <player> <fuel> <amount>'
+          raw_base_color: DARK_RED
+      separer2:
+        permission: ''
+        no_permission_message: ''
+        alias: ''
+        center: false
+        show:
+          on_help: ' &8Shop commands: &6[?]'
+          on_help_json:
+            hover_text: '&aAdmin Chest shop commands.'
+            click_type: ''
+            click_action: ''
+      listshop:
+        permission: uchest.admin.listshop
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: listshop
+        center: false
+        show:
+          on_help: ' &d/uchest listshop &7-&e All Shops list.'
+          on_help_json:
+            hover_text: '&aClick to all Shops list.'
+            click_type: SUGGEST_COMMAND
+            click_action: '/uchest listshop'
+          on_success: '%tag% &aSuccess.'
+          on_error: '%tag% &cError.'
+          on_usage: '%tag% &cErro, Use &d/uchest listshop'
+          raw_base_color: DARK_RED
+      listshopitems:
+        permission: uchest.admin.listshopitems
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: listshopitems
+        center: false
+        show:
+          on_help: ' &d/uchest listshopitems <shopname> &7-&e All Shops item list.'
+          on_help_json:
+            hover_text: '&aClick to all Shops item list.'
+            click_type: SUGGEST_COMMAND
+            click_action: '/uchest listshopitems <shopname>'
+          on_success: '%tag% &aSuccess.'
+          on_error: '%tag% &cError.'
+          on_usage: '%tag% &cErro, Use &d/uchest listshopitems <shopname>'
+          raw_base_color: DARK_RED
+      createshop:
+        permission: uchest.admin.createshop
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: createshop
+        center: false
+        show:
+          on_help: ' &d/uchest createshop <shopname> &7-&e Create a new Shop.'
+          on_help_json:
+            hover_text: '&aClick to create a new Shop.'
+            click_type: SUGGEST_COMMAND
+            click_action: '/uchest createshop <shopname>'
+          on_success: '%tag% &aNew store &b%shopname% &asuccessfully created, to add items use &b/uchest shopadd %shopname% <price>'
+          on_error: '%tag% &cThere was an error creating the new shop.'
+          on_usage: '%tag% &cErro, Use &d/uchest createshop <shopname>'
+          raw_base_color: DARK_RED
+      removeshop:
+        permission: uchest.admin.removeshop
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: removeshop
+        center: false
+        show:
+          on_help: ' &d/uchest removeshop <shopname> &7-&e Remove a Shop.'
+          on_help_json:
+            hover_text: '&aClick to remove a Shop.'
+            click_type: SUGGEST_COMMAND
+            click_action: '/uchest removeshop <shopname>'
+          on_success: '%tag% &aThe &b%shopname% &ashop has been successfully removed.'
+          on_error: '%tag% &cThere was an error removing the shop.'
+          on_usage: '%tag% &cErro, Use &d/uchest removeshop <shopname>'
+          raw_base_color: DARK_RED
+      shopadd:
+        permission: uchest.admin.shopadd
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: shopadd
+        center: false
+        show:
+          on_help: ' &d/uchest shopadd <value> &7-&e Add item to Shop.'
+          on_help_json:
+            hover_text: '&aClick to add item to Shop.'
+            click_type: SUGGEST_COMMAND
+            click_action: '/uchest shopadd <value>'
+          on_success: '%tag% &aYou added &b%item_type% &ato the shop &b%shopname% &afor &a$%value%'
+          on_error: '%tag% &cAn error occurs while adding the item.'
+          on_usage: '%tag% &cErro, Use &d/uchest shopadd <value>'
+          raw_base_color: DARK_RED

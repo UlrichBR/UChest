@@ -1,0 +1,889 @@
+# Internal placeholders
+#PLAYER
+# %chest_player_limit%
+# %chest_player_placed%
+#CHEST
+# %chest_id%
+# %chest_location%
+# %chest_owner%
+# %chest_nearby%
+# %chest_nearby_x%
+# %chest_nearby_y%
+# %chest_nearby_z%
+# %chest_level%
+# %chest_hook_state_formated%
+# %chest_hook_chest%
+# %chest_hook_action_formated%
+# %chest_bank_hook_disabled_hooked%
+#UPGRADE
+# %chest_levelup_price_formated%
+# %chest_downgrade_price_formated%
+# %chest_u_enabled%
+# %chest_u_price%
+# %chest_u_multiplier%
+# %chest_u_max_level%
+# %chest_u_downgrade_price%
+# %chest_u_next_level%
+# %chest_u_previous_level%
+#FLAG
+# %chest_flag_hologram%
+# %chest_flag_pickup%
+# %chest_flag_sell%
+#BANK
+# %chest_bank_collect%
+# %chest_bank_exp%
+#WORK
+# %chest_work_enabled%
+# %chest_work_fuelleft%
+#INFO
+# %chest_info_totalcaught%
+# %chest_info_totalsold%
+# %chest_info_totaltimeworked%
+# %chest_info_lastcaught%
+# %chest_info_lastsold%
+# %chest_info_lastWorked%
+#ITEM
+# %chest_c_id%
+# %chest_c_material%
+# %chest_c_texture%
+# %chest_c_data%
+# %chest_c_name%
+# %chest_c_enchants%
+# %chest_c_flags%
+# %chest_c_lore%	
+# %chest_c_distanceanother%
+# %chest_c_acceptedworlds%
+# %chest_c_acceptedfuels%
+# %chest_c_moneyfuel%
+# %chest_c_blockfuel%
+# %chest_c_sellshop%
+Cosmetic:
+  item:
+    material: 'STAINED_GLASS_PANE'
+    data: 7
+    amount: 1
+    name: ' '
+    flags:
+    - 'HIDE_ENCHANTS'
+Gui:
+  index_chest_owner:
+    inventory_name: '&d&l%chest_c_name% - Menu.'
+    inventory_rows: 5
+    sound-open: ''
+    pagination: []
+    items:
+      info:
+        sound-click: ''
+        itemstack: 'CHEST'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 10
+        name: '&aINFO'
+        lore:
+        - ''
+        - ' &eInformations:'
+        - ' '
+        - ' &fType: &b%chest_c_name%'
+        - ' &fOwner: &b%chest_owner%'
+        - ' &fNearby: &b%chest_nearby%'
+        - ' &fLevel: &b%chest_level%&7/%chest_u_max_level%'
+        - ' '
+        - ' &fTotal Item Caught: &b%chest_info_totalcaught%'
+        - ' &fTotal Time Worked: &b%chest_info_totaltimeworked%'
+        - ' &fTotal Sold: &a$%chest_info_totalsold%'
+        - ''
+        - ' &fWorking: %chest_work_enabled%'
+        - ' &fFuel left: &b%chest_work_fuelleft%'
+        - ' '
+        - ' &fLocation: &b%chest_location%'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+      upgrade:
+        sound-click: ''
+        itemstack: 'HOPPER'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 12
+        name: '&aUPGRADE'
+        lore:
+        - ''
+        - ' &eCurrent:'
+        - ' '
+        - ' &fLevel: &b%chest_level%'
+        - ' &fMax level: &b%chest_u_max_level%'
+        - ''
+        - ' &eClick to Open.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[opengui] upgrade_chest'
+        right-action:
+        - '[closegui]'
+        - '[opengui] upgrade_chest'
+      bank:
+        sound-click: ''
+        itemstack: 'SKULL_ITEM'
+        skullowner: ''
+        texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjQwMzhhNGVlYzNhOTc5MjJlZTM0OGYwZDMwOTM0MDlmOTIxNjU1MzMzMGZiMWIxOWZjODUzOGE0NDYxZDI3ZCJ9fX0='
+        data: 3
+        amount: 1
+        slot: 14
+        name: '&aBANK'
+        lore:
+        - ''
+        - ' &eTo collect:'
+        - ' '
+        - ' &fMoney: %chest_bank_hook_disabled_hooked%'
+        - ' &fExp: &5%chest_bank_exp%'
+        - ''
+        - ' &eCLICK LEFT - to collect &aMoney.'
+        - ' &eCLICK RIGHT - to collect &5EXP.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[player] chest collect %chest_id% MONEY'
+        - '[opengui] index_chest_owner'
+        right-action:
+        - '[closegui]'
+        - '[player] chest collect %chest_id% EXP'
+        - '[opengui] index_chest_owner'
+      hook:
+        sound-click: ''
+        itemstack: 'BLAZE_ROD'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 15
+        name: '&aHook in Chest'
+        lore:
+        - ''
+        - ' &fHooked: &b%chest_hook_state_formated%'
+        - ''
+        - ' &eClick to %chest_hook_action_formated%.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[player] chest hook %chest_id%'
+        right-action:
+        - '[closegui]'
+        - '[player] chest hook %chest_id%'
+      settings:
+        sound-click: ''
+        itemstack: 'REDSTONE_COMPARATOR'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 16
+        name: '&aChange Settings'
+        lore:
+        - ''
+        - ' &eClick to open the settings menu.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[opengui] chest_settings'
+        right-action:
+        - '[closegui]'
+        - '[opengui] chest_settings'
+      list:
+        sound-click: ''
+        itemstack: 'SKULL_ITEM'
+        skullowner: '%chest_owner%'
+        texture: ''
+        data: 3
+        amount: 1
+        slot: 29
+        name: '&aList your chests.'
+        lore:
+        - ''
+        - ' &fPlaced: &b%chest_player_placed%/%chest_player_limit%'
+        - ' '
+        - ' &eClick to list.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[opengui_list] 1'
+        right-action:
+        - '[closegui]'
+        - '[opengui_list] 1'
+      remove:
+        sound-click: ''
+        itemstack: 'ANVIL'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 31
+        click-price: 100.0 # NEED VAULT
+        name: '&cRemove this Chest.'
+        lore:
+        - ''
+        - ' &fPrice: &a$100'
+        - ''
+        - ' &cThe Bank will be lost.'
+        - ' &cThe count will be lost.'
+        - ' &bThe Level will be saved'
+        - ''
+        - ' &eClick to remove.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[removechest]'
+        right-action:
+        - '[closegui]'
+        - '[removechest]'
+      shopprice:
+        sound-click: ''
+        itemstack: 'DOUBLE_PLANT'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 33
+        name: '&aPRICES'
+        lore:
+        - ''
+        - ' &eClick to open the prices menu.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[opengui_listshopitems_player] 1'
+        right-action:
+        - '[closegui]'
+        - '[opengui_listshopitems_player] 1 '
+      shop:
+        sound-click: ''
+        itemstack: 'ENDER_CHEST'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 34
+        name: '&aChest Store'
+        lore:
+        - ''
+        - ' &eClick to open the chest store'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[opengui_store] store_chest'
+        right-action:
+        - '[closegui]'
+        - '[opengui_store] store_chest'
+  upgrade_chest:
+    inventory_name: '&d&l%chest_c_name% - Level.'
+    inventory_rows: 4
+    sound-open: ''
+    pagination: []
+    items:
+      upgrade:
+        sound-click: ''
+        itemstack: 'DIAMOND_BLOCK'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 11
+        name: '&aUPGRADE'
+        lore:
+        - ''
+        - ' %chest_levelup_price_formated%'
+        - ' &fNext: &b%chest_u_next_level%'
+        - ''
+        - ' &eClick to upgrade 1 level.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[player] chest level %chest_id% UP'
+        - '[opengui] upgrade_chest'
+        right-action:
+        - '[closegui]'
+        - '[player] chest level %chest_id% UP'
+        - '[opengui] upgrade_chest'
+      chestinfo:
+        sound-click: ''
+        itemstack: 'CHEST'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 13
+        name: '&aINFO'
+        lore:
+        - ''
+        - ' &eCurrent:'
+        - ' '
+        - ' &fLevel: &b%chest_level%'
+        - ' &fMax level: &b%chest_u_max_level%'
+        - ' &fNext: &b%chest_u_next_level%'
+        - ''
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+      downgrade:
+        sound-click: ''
+        itemstack: 'REDSTONE_BLOCK'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 15
+        name: '&cDOWNGRADE'
+        lore:
+        - ''
+        - ' %chest_dowgrade_price_formated%'
+        - ' &fPrevious: &b%chest_u_previous_level%'
+        - ''
+        - ' &eClick to downgrade 1 level.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[player] chest level %chest_id% DOWN'
+        - '[opengui] upgrade_chest'
+        right-action:
+        - '[closegui]'
+        - '[opengui] upgrade_chest'
+      back:
+        sound-click: ''
+        itemstack: 'ARROW'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 31
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to go back'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui] index_chest_owner'
+        right-action:
+        - '[closegui]'
+        - '[opengui] index_chest_owner'
+  chest_settings:
+    inventory_name: '&d&l%chest_c_name% - Settings.'
+    inventory_rows: 3
+    sound-open: ''
+    pagination: []
+    items:
+      hologram:
+        sound-click: ''
+        itemstack: 'MAP'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 10
+        name: '&aHOLOGRAM'
+        lore:
+        - ''
+        - ' &fState: %chest_flag_hologram%'
+        - ''
+        - ' &eClick to change.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[player] chest flag %chest_id% HOLOGRAM:TOGGLE'
+        - '[opengui] chest_settings'
+        right-action:
+        - '[closegui]'
+        - '[player] chest flag %chest_id% HOLOGRAM:TOGGLE'
+        - '[opengui] chest_settings'
+      pickup:
+        sound-click: ''
+        itemstack: 'IRON_PICKAXE'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 11
+        name: '&aPICKUP'
+        lore:
+        - ''
+        - ' &fState: %chest_flag_pickup%'
+        - ''
+        - ' &eClick to change.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[player] chest flag %chest_id% PICKUP:TOGGLE'
+        - '[opengui] chest_settings'
+        right-action:
+        - '[closegui]'
+        - '[player] chest flag %chest_id% PICKUP:TOGGLE'
+        - '[opengui] chest_settings'
+      recharge:
+        sound-click: ''
+        itemstack: 'COAL'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 12
+        name: '&aONLY OWNER RECHARGE'
+        lore:
+        - ''
+        - ' &fState: %chest_flag_ownerrecharge%'
+        - ''
+        - ' &eClick to change.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[player] chest flag %chest_id% OWNERRECHARGE:TOGGLE'
+        - '[opengui] chest_settings'
+        right-action:
+        - '[closegui]'
+        - '[player] chest flag %chest_id% OWNERRECHARGE:TOGGLE'
+        - '[opengui] chest_settings'
+      sellable:
+        sound-click: ''
+        itemstack: 'DOUBLE_PLANT'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 13
+        name: '&aCOLLECT ONLY SELABLE'
+        lore:
+        - ''
+        - ' &fState: %chest_flag_collectselable%'
+        - ''
+        - ' &eClick to change.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[player] chest flag %chest_id% COLLECTSELABLE:TOGGLE'
+        - '[opengui] chest_settings'
+        right-action:
+        - '[closegui]'
+        - '[player] chest flag %chest_id% COLLECTSELABLE:TOGGLE'
+        - '[opengui] chest_settings'
+      back:
+        sound-click: ''
+        itemstack: 'ARROW'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 22
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to go back'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui] index_chest_owner'
+        right-action:
+        - '[closegui]'
+        - '[opengui] index_chest_owner'
+  store_chest:
+    inventory_name: '&b&lChest Store.'
+    inventory_rows: 4
+    sound-open: ''
+    pagination: []
+    items:
+      chest:
+        sound-click: ''
+        itemstack: 'CHEST'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 11
+        name: '&aBuy Chests'
+        lore:
+        - ''
+        - ' &eClick to open.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[opengui_store] store_chest_chest'
+        right-action:
+        - '[closegui]'
+        - '[opengui_store] store_chest_chest'
+      coals:
+        sound-click: ''
+        itemstack: 'COAL'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 15
+        name: '&aBuy Fuels'
+        lore:
+        - ''
+        - ' &eClick to open.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[opengui_store] store_chest_fuel'
+        right-action:
+        - '[closegui]'
+        - '[opengui_store] store_chest_fuel'
+      player:
+        sound-click: ''
+        itemstack: 'SKULL_ITEM'
+        skullowner: '%player%'
+        texture: ''
+        data: 3
+        amount: 1
+        slot: 31
+        name: '&a%player%'
+        lore:
+        - ''
+        - ' &fYour money: &a$%player_money%'
+        enchants:
+        - ''
+        flags:
+        - ''
+  store_chest_chest:
+    inventory_name: '&b&lExample Store - Chests.'
+    inventory_rows: 4
+    sound-open: ''
+    pagination: []
+    items:
+      collector:
+        sound-click: ''
+        itemstack: 'CHEST'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 10
+        click-price: 5000.0 # NEED VAULT
+        name: '&5&lCollector Chest'
+        lore:
+        - ''
+        - ' &fPrice: &a$5.000'
+        - ' &fAmount: &b1'
+        - ' &fLevel: &b1'
+        - ' &fNeed Fuel: &a&bYES'
+        - ''
+        - ' &eClick to buy.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[console] uchest give %player% collector 1 1'
+        - '[opengui_store] store_chest_chest'
+        right-action:
+        - '[closegui]'
+        - '[console] uchest give %player% collector 1 1'
+        - '[opengui_store] store_chest_chest'
+      infinity:
+        sound-click: ''
+        itemstack: 'ENDER_CHEST'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 11
+        click-price: 10000.0 # NEED VAULT
+        name: '&6&lInfinity Chest'
+        lore:
+        - ''
+        - ' &fPrice: &a$10.000'
+        - ' &fAmount: &b1'
+        - ' &fLevel: &b1'
+        - ' &fNeed Fuel: &c&lNO'
+        - ''
+        - ' &eClick to buy.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[console] uchest give %player% infinity 1 1'
+        - '[opengui_store] store_chest_chest'
+        right-action:
+        - '[closegui]'
+        - '[console] uchest give %player% infinity 1 1'
+        - '[opengui_store] store_chest_chest'
+      back:
+        sound-click: ''
+        itemstack: 'ARROW'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 31
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to go back'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui_store] store_chest'
+        right-action:
+        - '[closegui]'
+        - '[opengui_store] store_chest'
+      player:
+        sound-click: ''
+        itemstack: 'SKULL_ITEM'
+        skullowner: '%player%'
+        texture: ''
+        data: 3
+        amount: 1
+        slot: 34
+        name: '&a%player%'
+        lore:
+        - ''
+        - ' &fYour money: &a$%player_money%'
+        enchants:
+        - ''
+        flags:
+        - ''
+  store_chest_fuel:
+    inventory_name: '&b&lExample Store - Fuels.'
+    inventory_rows: 4
+    sound-open: ''
+    pagination: []
+    items:
+      coal:
+        sound-click: ''
+        itemstack: 'COAL'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 16
+        slot: 10
+        click-price: 5000.0 # NEED VAULT
+        name: '&a&lComum Fuel'
+        lore:
+        - ''
+        - ' &fPrice: &a$5.000'
+        - ' &fAmount: &b16'
+        - ' &fRecharge Time: &b60 seconds.'
+        - ''
+        - ' &eClick to buy.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[console] uchest givefuel %player% coal 16'
+        - '[opengui_store] store_chest_fuel'
+        right-action:
+        - '[closegui]'
+        - '[console] uchest givefuel %player% coal 16'
+        - '[opengui_store] store_chest_fuel'
+      superfuel:
+        sound-click: ''
+        itemstack: 'NETHER_STAR'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 16
+        slot: 11
+        click-price: 10000.0 # NEED VAULT
+        name: '&6&lSuper Fuel'
+        lore:
+        - ''
+        - ' &fPrice: &a$10.000'
+        - ' &fAmount: &b16'
+        - ' &fRecharge Time: &b5 minutes.'
+        - ''
+        - ' &eClick to buy.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[console] uchest givefuel %player% superfuel 16'
+        - '[opengui_store] store_chest_fuel'
+        right-action:
+        - '[closegui]'
+        - '[console] uchest givefuel %player% superfuel 16'
+        - '[opengui_store] store_chest_fuel'
+      back:
+        sound-click: ''
+        itemstack: 'ARROW'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 31
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to go back'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui_store] store_chest'
+        right-action:
+        - '[closegui]'
+        - '[opengui_store] store_chest'
+      player:
+        sound-click: ''
+        itemstack: 'SKULL_ITEM'
+        skullowner: '%player%'
+        texture: ''
+        data: 3
+        amount: 1
+        slot: 34
+        name: '&a%player%'
+        lore:
+        - ''
+        - ' &fYour money: &a$%player_money%'
+        enchants:
+        - ''
+        flags:
+        - ''
+  index_chest_no_owner:
+    inventory_name: '&d&l%chest_c_name% &4(%chest_owner%)'
+    inventory_rows: 3
+    sound-open: ''
+    pagination: []
+    items:
+      info:
+        sound-click: ''
+        itemstack: 'CHEST'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 11
+        name: '&aChest Info'
+        lore:
+        - ''
+        - ' &eInformations:'
+        - ' '
+        - ' &fType: &b%chest_c_name%'
+        - ' &fOwner: &b%chest_owner%'
+        - ' '
+        - ' &fTotal Item Caught: &b%chest_info_totalcaught%'
+        - ' &fTotal Time Worked: &b%chest_info_totaltimeworked%'
+        - ' &fTotal Sold: &a$%chest_info_totalsold%'
+        - ' '
+        - ' &fLocation: &b%chest_location%'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+      list:
+        sound-click: ''
+        itemstack: 'SKULL_ITEM'
+        skullowner: '%chest_owner%'
+        texture: ''
+        data: 3
+        amount: 1
+        slot: 15
+        name: '&aList chests of &a%chest_owner%.'
+        lore:
+        - ''
+        - ' &fPlaced: &b%chest_player_placed%/%chest_player_limit%'
+        - ' '
+        - ' &eClick to list.'
+        enchants:
+        - ''
+        flags:
+        - 'HIDE_ATTRIBUTES'
+        - 'HIDE_ENCHANTS'
+        left-action:
+        - '[closegui]'
+        - '[opengui_list] 1'
+        right-action:
+        - '[closegui]'
+        - '[opengui_list] 1'

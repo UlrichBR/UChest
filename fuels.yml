@@ -1,0 +1,31 @@
+Fuels:
+  coal:
+    material: 'COAL'
+    data: 0
+    texture: '' # use base 64 texture
+    name: '&a&lComum Fuel'
+    lore:
+    - ''
+    - ' &fRecharge Time: &b60 Fuel Points.'
+    - ''
+    - ' &ePlace this item on your chest to start.'
+    flags:
+    - HIDE_ENCHANTS
+    enchants:
+    - 'PROTECTION_ENVIRONMENTAL;1'
+    recharge_time: 60 # FUEL POINTS
+  superfuel:
+    material: 'NETHER_STAR'
+    data: 0
+    texture: '' # use base 64 texture
+    name: '&6&lSuper Fuel'
+    lore:
+    - ''
+    - ' &fRecharge Time: &b300 Fuel Points.'
+    - ''
+    - ' &ePlace this item on your chest to start.'
+    flags:
+    - HIDE_ENCHANTS
+    enchants:
+    - 'PROTECTION_ENVIRONMENTAL;1'
+    recharge_time: 300 # FUEL POINTS

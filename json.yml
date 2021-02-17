@@ -1,0 +1,52 @@
+Json:
+  simple:
+    command_unknown:
+      center: false
+      raw_text: '%tag% &cUnknown command, &b[CLICK HERE] &cor use &d/uchest help &cto see the list of available commands.'
+      hover_text: '&aClick here to view Help.'
+      click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+      click_action: '/uchest help'
+      raw_base_color: 'RED'
+    command_unknown_player:
+      center: false
+      raw_text: '%tag% &cUnknown command, &b[CLICK HERE] &cor use &d/chest help &cto see the list of available commands.'
+      hover_text: '&aClick here to view Help.'
+      click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+      click_action: '/chest help'
+      raw_base_color: 'RED'
+    hook_start:
+      center: false
+      raw_text: '%tag% &8You have &7%time_action% seconds &8to click on a chest to make the hook. or &c[CLICK HERE] &8to cancel this!'
+      hover_text: '&aClick to cancel.'
+      click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+      click_action: '/chest cancelactions'
+      raw_base_color: 'DARK_GRAY'
+    new_shop_created:
+      center: false
+      raw_text: '%tag% &aNew store &b%shopname% &asuccessfully created, to add items &b[CLICK HERE] &aor use &b/uchest shopadd %shopname% <price>'
+      hover_text: '&aClick here to add item in shop.'
+      click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+      click_action: '/uchest shopadd %shopname% <price>'
+      raw_base_color: 'GREEN'
+    list_chest_format:
+      center: false
+      raw_text: ' &a%num% &7- &7%chest_id% &7- %chest_name% &8(%chest_material%)'
+      hover_text: '&aClick here to give.'
+      click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+      click_action: '/uchest give %player% %chest_id% 1 1'
+      raw_base_color: 'RED'
+    list_shop_format:
+      center: false
+      raw_text: ' &a%num% &7- &b%shop_name% &8(%shop_items_amount%)'
+      hover_text: '&aClick to list items.'
+      click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+      click_action: '/uchest listshopitems %shop_name%'
+      raw_base_color: 'RED'
+    list_fuel_format:
+      center: false
+      raw_text: ' &a%num% &7- &7%fuel_id% &7- %fuel_name% &8(%fuel_material%)'
+      hover_text: '&aClick here to give.'
+      click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+      click_action: '/uchest givefuel %player% %fuel_id% 1'
+      raw_base_color: 'RED'
+  advanced: {}

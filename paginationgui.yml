@@ -1,0 +1,373 @@
+Pagination:
+  list_chests:
+    inventory_name: '&5&l%chest_owner% &5[Pg: %page%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: '%chest_c_material%'
+        skullowner: '%chest_c_skullowner%'
+        texture: '%chest_c_texture%'
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&a%chest_c_name%'
+        lore:
+        - ''
+        - ' &fLocation: &b%chest_location%'
+        - ' &fID: &b%chest_id%'
+        - ' '
+        - ' &eLeft-Click to teleport to chest.' 
+        - ' &eRight-Click to %chest_hook_action_formated% &ethe chest.' 
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[player] /chest tp %chest_id%'
+        right-action:
+        - '[closegui]'
+        - '[player] /chest hook %chest_id%'
+      prev:
+        sound-click: ''
+        itemstack: 'INK_SACK'
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_list] %prev%'
+        right-action:
+        - '[opengui_list] %prev%'
+      next:
+        sound-click: ''
+        itemstack: 'INK_SACK'
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_list] %next%'
+        right-action:
+        - '[opengui_list] %next%'
+      back:
+        sound-click: ''
+        itemstack: 'ARROW'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_chest_owner'
+        right-action:
+        - '[opengui] index_chest_owner'
+  list_shop:
+    inventory_name: '&5&lAll Shops &5[Pg: %page%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: 'PAPER'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&a%shop_name%'
+        lore:
+        - ''
+        - ' &fItems: &b%shop_items_amount%'
+        - ' '
+        - ' &eClick to open shop.' 
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui_listshopitems] 1'
+        right-action:
+        - '[closegui]'
+        - '[opengui_listshopitems] 1'
+      prev:
+        sound-click: ''
+        itemstack: 'INK_SACK'
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui_listshop] %prev%'
+        right-action:
+        - '[closegui]'
+        - '[opengui_listshop] %prev%'
+      next:
+        sound-click: ''
+        itemstack: 'INK_SACK'
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui_listshop] %next%'
+        right-action:
+        - '[closegui]'
+        - '[opengui_listshop] %next%'
+  list_shopitems:
+    inventory_name: '&5&lItems in %shop_name% &5[Pg: %page%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: '%shop_item_material%'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&a%shop_item_material%'
+        lore:
+        - ''
+        - ' &fData: &b%shop_item_data%'
+        - ' &fPrice: &a$%shop_item_price%'
+        - ' '
+        enchants:
+        - ''
+        flags:
+        - ''
+      prev:
+        sound-click: ''
+        itemstack: 'INK_SACK'
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui_listshopitems] %prev%'
+        right-action:
+        - '[closegui]'
+        - '[opengui_listshopitems] %prev%'
+      next:
+        sound-click: ''
+        itemstack: 'INK_SACK'
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui_listshopitems] %next%'
+        right-action:
+        - '[closegui]'
+        - '[opengui_listshopitems] %next%'
+      back:
+        sound-click: ''
+        itemstack: 'ARROW'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui_listshop] 1'
+        right-action:
+        - '[closegui]'
+        - '[opengui_listshop] 1'
+      extra:
+        sound-click: ''
+        itemstack: 'WOOL'
+        skullowner: ''
+        texture: ''
+        data: 14
+        amount: 1
+        slot: 44
+        name: '&cDELETE SHOP'
+        lore:
+        - ''
+        - ' &eClick to delete.'
+        - ''
+        - ' &cThis cannot be undone.'
+        - ' &cSaved items will be lost.'
+        - ' &cThe values will be lost.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[player] uchest removeshop %shop_name%'
+        right-action:
+        - '[closegui]'
+        - '[player] uchest removeshop %shop_name%'
+  list_shopitems_player:
+    inventory_name: '&5&lItems in %shop_name% &5[Pg: %page%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: '%shop_item_material%'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&a%shop_item_material%'
+        lore:
+        - ''
+        - ' &fData: &b%shop_item_data%'
+        - ' &fPrice: &a$%shop_item_price%'
+        - ' '
+        enchants:
+        - ''
+        flags:
+        - ''
+      prev:
+        sound-click: ''
+        itemstack: 'INK_SACK'
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui_listshopitems_player] %prev%'
+        right-action:
+        - '[closegui]'
+        - '[opengui_listshopitems_player] %prev%'
+      next:
+        sound-click: ''
+        itemstack: 'INK_SACK'
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui_listshopitems_player] %next%'
+        right-action:
+        - '[closegui]'
+        - '[opengui_listshopitems_player] %next%'
+      back:
+        sound-click: ''
+        itemstack: 'ARROW'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[opengui] index_chest_owner'
+        right-action:
+        - '[closegui]'
+        - '[opengui] index_chest_owner'

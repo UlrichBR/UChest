@@ -1,0 +1,15 @@
+Shop:
+  comum:
+    diamond:
+      data: 0
+      price: 5.0
+    stone:
+      data: 0
+      price: 5.0
+  infinity:
+    stone:
+      data: 0
+      price: 10.0
+    diamond:
+      data: 0
+      price: 10.0

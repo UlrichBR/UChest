@@ -1,0 +1,17 @@
+Plugin:
+  check-for-updates: true
+  use-metrics: true
+
+Config:
+  date-format: dd/MM/yyyy HH:mm
+  debug_errors: true
+  center_lang_messages: false
+  time_action: 30 # IN SECONDS
+  enabled_words:
+  - 'world'
+  limit_default: 4
+  chest_limit: 
+    player: 4 # permission is uchest.limit.player
+    vip1: 8 # permission is uchest.limit.vip1
+    mvp: 15 # permission is uchest.limit.mvp
+    another_name: 50 # permission is uchest.limit.another_name
